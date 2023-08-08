@@ -4,4 +4,4 @@ def magic_calculation(a, b, c):
         print(c)
     if c > b:
         print(a + b)
-    print(a*b +c)
+    print(a*b - c)
