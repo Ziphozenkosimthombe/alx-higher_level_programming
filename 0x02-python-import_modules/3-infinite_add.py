@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 if __name__ == "main":
     """print addition of all the argument"""
 
