@@ -6,10 +6,10 @@ if __name__ == "__main__":
 
     counter = len(sys.argv) - 1
     if counter == 0:
-        print("0 argument.")
+        print("0 arguments.")
     elif counter == 1:
-        print("0 argument:")
+        print("1 argument:")
     else:
         print("{} arguments:".format(counter))
     for i in range(counter):
-        print("{}: {}".format(counter, sys.argv[i +1]))
+        print("{}: {}".format(i + 1, sys.argv[i + 1]))
