@@ -2,8 +2,6 @@
 
 if __name__ == "main":
     """print addition of all the argument"""
-
-
     import sys
 
     total = 0
