@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ptint all integers of the list
 """
 
