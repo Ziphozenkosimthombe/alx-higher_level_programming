@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""function that replaces all accurrences of an element by another in a new list"""
+"""function that replaces all accurrences of element in a new list"""
 
 
 def search_replace(my_list, search, replace):
