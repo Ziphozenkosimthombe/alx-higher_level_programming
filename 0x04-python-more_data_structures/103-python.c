@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <Python.h>
 
-
 /**
- * print_python_bytes - bytes info
+ * print_python_bytes -  bytes infor
  *
  * @p: Object Python
  * Return: nothing return
@@ -13,12 +12,13 @@ void print_python_bytes(PyObject *p)
 	char *str;
 	long int size, j, lim;
 
-	printf("[.] byts object info\n");
+	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
 		printf(" [ERROR] invalid Bytes Object\n");
 		return;
 	}
+
 	size = ((PyVarObject *)(p))->ob_size;
 	str = ((PyBytesObject *)p)->ob_sval;
 
@@ -29,6 +29,7 @@ void print_python_bytes(PyObject *p)
 		lim = 10;
 	else
 		lim = size + 1;
+
 	printf(" first %ld bytes:", lim);
 
 	for (j = 0; j < lim; j++)
@@ -36,26 +37,28 @@ void print_python_bytes(PyObject *p)
 			printf(" %02x", str[j]);
 		else
 			printf(" %02x", 256 + str[j]);
+
 	printf("\n");
 }
+
 /**
- * print_python_list - list info
+ * print_python_list - Prints list information
  *
- * @p: Object Python
- * Return: nothing return
+ * @p: Python Object
+ * Return: no return
  */
 void print_python_list(PyObject *p)
 {
 	long int size, j;
-	PyListObject *list;
+	PyListObject *lst;
 	PyObject *obj;
 
 	size = ((PyVarObject *)(p))->ob_size;
-	list = (PyListObject *)p;
+	lst = (PyListObject *)p;
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", list->allocated);
+	printf("[*] Allocated = %ld\n", lst->allocated);
 
 	for (j = 0; j < size; j++)
 	{
@@ -65,4 +68,3 @@ void print_python_list(PyObject *p)
 			print_python_bytes(obj);
 	}
 }
-
