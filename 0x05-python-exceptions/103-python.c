@@ -5,7 +5,7 @@ void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
 
 /**
- * print_python_list - python basic list info eill be printed 
+ * print_python_list - python basic list info eill be printed
  *
  * @p: the pyObject list
  */
@@ -67,7 +67,7 @@ void print_python_bytes(PyObject *p)
 	if (((PyVarObject *)p)->ob_size >= 10)
 		size = 10;
 	else
-		size =((PyVarObject *)p)->ob_size + 1;
+		size = ((PyVarObject *)p)->ob_size + 1;
 
 	printf("  first %ld bytes: ", size);
 	for (i = 0; i < size; i++)
@@ -81,7 +81,8 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_float - the basic info about the python float object will be printed
+ * print_python_float - the basic info about the python
+ * float object will be printed
  *
  * @p: the pyObjet float
  */
