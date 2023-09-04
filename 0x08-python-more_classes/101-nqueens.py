@@ -21,6 +21,8 @@ if N < 4:
     sys.exit(1)
 
 """ The function to check if a position is safe"""
+
+
 def safe(board, row, col):
     """ look at the row"""
     for k in range(col):
@@ -37,7 +39,10 @@ def safe(board, row, col):
     """Return true if no conflict"""
     return True
 
+
 """function to solve the problem recursively"""
+
+
 def nqueens(board, col):
     if col == N:
         solution = []
@@ -54,7 +59,8 @@ def nqueens(board, col):
             nqueens(board, col + 1)
             board[k][col] = 0
 
+
 board = [[0 for k in range(N)] for a in range(N)]
 
 # Call the solver function
-nqueens(board, 0) 
+nqueens(board, 0)
