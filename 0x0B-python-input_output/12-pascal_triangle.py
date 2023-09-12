@@ -1,4 +1,4 @@
- #!/usr/bin/python3
+#!/usr/bin/python3
 """defining the function of Pscal's triangle of n"""
 
 
@@ -14,7 +14,8 @@ def pascal_triangle(n):
         row = [1]
         """ Loop from the second element to the second last element"""
         for b in range(1, a):
-            """Calculate the current element as the sum of the two elements above it"""
+            """Calculate the current element as the sum of
+            the two elements above it"""
             row.append(triangle[a-1][b-1] + triangle[a-1][b])
         row.append(1)
         triangle.append(row)
