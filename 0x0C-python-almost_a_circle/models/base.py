@@ -5,6 +5,7 @@ import random
 import csv
 import turtle
 
+
 class Base:
     """initialazing the class of Base"""
     __nb_objects = 0
@@ -17,12 +18,12 @@ class Base:
             nothing.
         """
         if id is not None:
-           # self.id = id
-           self.id = random.randint(1, 100)
+            """self.id = id"""
+            self.id = random.randint(1, 100)
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     def to_dictionary(self):
         dict = {}
         for key, value in self.__dict__.items():
@@ -94,7 +95,8 @@ class Base:
                 attrs = ["id", "size", "x", "y"]
             else:
                 return
-            csv_list = [[getattr(obj, attr) for attr in attrs] for obj in list_objs]
+            csv_list = [[getattr(obj, attr)
+                        for attr in attrs] for obj in list_objs]
         filename = class_name + ".csv"
         with open(filename, "w") as f:
             writer = csv.writer(f)
