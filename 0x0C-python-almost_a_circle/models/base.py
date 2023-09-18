@@ -18,8 +18,8 @@ class Base:
             nothing.
         """
         if id is not None:
-            """self.id = id"""
-            self.id = random.randint(1, 100)
+            self.id = id
+            """self.id = random.randint(1, 100)"""
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
