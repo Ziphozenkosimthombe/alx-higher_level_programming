@@ -4,6 +4,8 @@ from models.base import Base
 from models.rectangle import Rectangle
 
 """creating a test that inherits from unittest.TestCase"""
+
+
 class TestBase(unittest.TestCase):
 
     def test_unit(self):
@@ -17,19 +19,20 @@ class TestBase(unittest.TestCase):
         """
 
     def test_to_json_string(self):
-        """chech if the method returns the correct JSON string
-        """
+        """chech if the method returns the correct JSON string"""
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
-        self.assertEqual(Base.to_json_string([{"id": 1},
-            {"id": 2}]), '[{"id": 1}, {"id": 2}]')
+        self.assertEqual(
+                Base.to_json_string(
+                    [{"id": 1},
+                        {"id": 2}]), '[{"id": 1}, {"id": 2}]')
 
     def test_from_json_string(self):
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string(
             '[{"id": 1}, {"id": 2}]'), [{"id": 1}, {"id": 2}])
-    
+
     def test_save_to_file(self):
         """creating the list of instance of the class"""
         b1 = Base(1)
@@ -41,7 +44,9 @@ class TestBase(unittest.TestCase):
         import json
         with open('Base.json', 'r') as f:
             json_lists = f.read()
-        self.assertEqual(json.loads(json_lists),
+        self.assertEqual(
+                json.loads(
+                    json_lists),
                 [{"id": b1.id}, {"id": b2.id}, {"id": b3.id}])
 
     def setUp(self):
@@ -68,15 +73,18 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.csv", "r") as f:
             reader = csv.reader(f)
             csv_list = list(reader)
-            self.assertEqual(csv_list,
-                         [[str(r1.id), "2", "3", "1", "2"],
-                          [str(r2.id), "4", "5", "3", "4"],
-                          [str(r3.id), "6", "7", "5", "6"]])
+            self.assertEqual(
+                    csv_list,
+                    [[str(r1.id), "2", "3", "1", "2"],
+                        [str(r2.id), "4", "5", "3", "4"],
+                        [str(r3.id), "6", "7", "5", "6"]])
 
     def tearDown(self):
         """Delete the temporary JSON file
         """
         import os
         os.remove("Rectangle.json")
+
+
 if __name__ == "__main__":
     unittest.main()
