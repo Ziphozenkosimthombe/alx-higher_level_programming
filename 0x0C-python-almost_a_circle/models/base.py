@@ -21,7 +21,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    def to_dictionary(self):
+    """def to_dictionary(self):
         """returns a dictionary representation of
         the object.
         """
@@ -29,6 +29,7 @@ class Base:
         for key, value in self.__dict__.items():
             dict[key] = value
         return dict
+    """
 
     @staticmethod
     def to_json_string(list_dictionaries):
