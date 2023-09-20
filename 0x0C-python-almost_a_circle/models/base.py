@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""importing"""
 import json
-import random
 import csv
 import turtle
 
@@ -19,7 +17,6 @@ class Base:
         """
         if id is not None:
             self.id = id
-            """self.id = random.randint(1, 100)"""
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -52,9 +49,11 @@ class Base:
         if not list_objs:
             json_lists = "[]"
         else:
-            dict_list = [obj.to_dictionary() for obj in list_objs]
+            dict_list = [
+                    obj.to_dictionary() for obj in list_objs
+                    ]
             json_lists = cls.to_json_string(dict_list)
-        filename = cls.__name__ + ".json"
+            filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
             f.write(json_lists)
 
@@ -90,7 +89,9 @@ class Base:
         else:
             class_name = cls.__name__
             if class_name == "Rectangle":
-                attrs = ["id", "width", "height", "x", "y"]
+                attrs = [
+                        "id", "width", "height", "x", "y"
+                        ]
             elif class_name == "Square":
                 attrs = ["id", "size", "x", "y"]
             else:
