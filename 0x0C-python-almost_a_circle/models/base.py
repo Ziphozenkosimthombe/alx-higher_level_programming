@@ -22,6 +22,9 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_dictionary(self):
+        """returns a dictionary representation of
+        the object.
+        """
         dict = {}
         for key, value in self.__dict__.items():
             dict[key] = value
