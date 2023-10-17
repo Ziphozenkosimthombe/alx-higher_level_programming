@@ -2,4 +2,4 @@
 -- database name will be passed as an argument of the mysql command.
 -- not allowed to use the DESCRIBE or EXPLAIN statement.
 
-SHOW COLUMNS FROM first_table
+SHOW CREATE TABLEfirst_table
