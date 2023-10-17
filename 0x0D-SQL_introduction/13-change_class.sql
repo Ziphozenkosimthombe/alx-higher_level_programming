@@ -2,5 +2,4 @@
 -- The database name will be passed as an argument of the mysql command
 
 DROP FROM second_table
-where score <= 5
-DESC
+where score <= 5;
