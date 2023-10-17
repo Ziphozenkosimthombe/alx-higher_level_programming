@@ -6,4 +6,4 @@
 
 USE `hbtn_0c_0`
 ALTER `first_table`
-CONVERT TO CHARACTER SET UTF8 COLLATE utf8mb4_unicode_ci;
+CONVERT TO CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci;
