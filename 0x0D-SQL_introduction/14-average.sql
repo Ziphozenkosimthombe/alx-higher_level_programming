@@ -2,7 +2,6 @@
 -- The result column name should be average.
 -- database name will be passed as an argument of the mysql command
 
-SELECT score
-COUNT(score) AS average
+SELECT COUNT(score) AS average
 FROM second_table
 GROUP BY score;
