@@ -1,5 +1,5 @@
 # Project: 0x12. JavaScript - Warm up
-![](./screenshot.jpg)
+![](./Javascript-535.png.jpeg)
 
 ## Resources
 
