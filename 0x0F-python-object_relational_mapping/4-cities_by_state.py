@@ -16,10 +16,11 @@ if __name__ == "__main__":
 
     # exercuting the SELECT quary to fatch the data
     my_cursor.execute(
-        """SELECT cities.id, cities.name, state.name
-        FROM cities JOIN states
+        """SELECT cities.id, cities.name, states.name
+        FROM cities
+        JOIN states
         ON cities.state_id = states.id
-        ORDER BY id ASC
+        ORDER BY cities.id ASC
         """)
 
     # fetching all the data returned by the quary
