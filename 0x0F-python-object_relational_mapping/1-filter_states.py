@@ -17,7 +17,8 @@ if __name__ == "__main__":
     # exercuting the SELECT quary to fatch the data
     my_cursor.execute(
             """SELECT * FROM states WHERE name LIKE 'N%'
-            ORDER BY states.id AS""")
+            ORDER BY states.id ASC
+            """)
 
     # fetching all the data returned by the quary
     my_data = my_cursor.fetchall()
