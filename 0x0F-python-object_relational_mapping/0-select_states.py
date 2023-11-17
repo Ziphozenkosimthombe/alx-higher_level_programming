@@ -1,29 +1,31 @@
 #!/usr/bin/python3
-"""script that lists all states from the database hbtn_0e_0_usa:"""
+"""
+script that lists all states from the database hbtn_0e_0_usa:
+"""
 
+if __name__ == "__main__":
 
-import MySQLdb
-from sys import argv
-
-if __name__ == '__name__':
+    import MySQLdb
+    from sys import argv
 
     # connect database using the command-line arguments
-    myDB = MySQLdb.connect(
-            host='localhost', user=argv[1],
-            port=3306, passwd=argv[2],
-            db=argv[3])
+    my_db = MySQLdb.connect(host='localhost', user=argv[1], password=argv[2],
+                            db=argv[3], port=3306)
     # create the cursor object to iterate with database
-    myCur = myDB.cursor()
+    my_cursor = my_db.cursor()
+
     # exercuting the SELECT quary to fatch the data
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    my_cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
+
     # fetching all the data returned by the quary
-    rows = cur.fetchall()
+    my_data = my_cursor.fetchall()
+
     # iterate the fatch data and print each row
-    for row in rows:
+    for row in my_data:
         print(row)
 
     # closing all the cursor
-    myCursor.close()
+    my_cursor.close()
 
     # closing all the database
-    myDB.close()
+    my_db.close
