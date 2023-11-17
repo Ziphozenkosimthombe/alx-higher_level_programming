@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     # exercuting the SELECT quary to fatch the data
     my_cursor.execute(
-            """SELECT * FROM states WHERE name LIKE 'N%'
+            """SELECT * FROM states WHERE name LIKE BINARY 'N%'
             ORDER BY states.id ASC
             """)
 
