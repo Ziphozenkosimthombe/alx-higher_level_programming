@@ -16,21 +16,14 @@ if __name__ == "__main__":
 
     # exercuting the SELECT quary to fatch the data
     my_cursor.execute(
-        """SELECT cities.id, cities.name
-        FROM cities
-        JOIN states
+        """SELECT * FROM cities
+        INNER JOIN states
         ON cities.state_id = states.id
-        WHERE states.name
-        LIKE BINARY %(state_name)s
-        ORDER BY cities.id ASC
-        """, 'state_name': argv[4])
+        ORDER BY cities.id""")
 
-    # fetching all the data returned by the quary
-    my_data = my_cursor.fetchall()
-
-    # iterate the fatch data and print each row
-    if my_date is not None:
-        print(", ".join([row[1] for row in my_data]))
+    print(", ".join([city[2]
+                     for city in my_cursor.fetchall()
+                     if city[4] == argv[4]]))
 
     # closing all the cursor
     my_cursor.close()
